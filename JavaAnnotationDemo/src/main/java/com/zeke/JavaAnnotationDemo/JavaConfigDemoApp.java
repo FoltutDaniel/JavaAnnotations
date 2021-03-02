@@ -1,16 +1,12 @@
 package com.zeke.JavaAnnotationDemo;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ) {
-       //read spring config file
-    	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+public class JavaConfigDemoApp {
+
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
     	//get the bean from spring container
     	Coach coach1 = context.getBean("tennisCoach",Coach.class); //constructor injection
     	Coach coach2 = context.getBean("footballCoach",Coach.class); //setter injection
@@ -30,5 +26,7 @@ public class App
     	//close context
     	//close context
     	context.close();
-    }
+
+	}
+
 }
