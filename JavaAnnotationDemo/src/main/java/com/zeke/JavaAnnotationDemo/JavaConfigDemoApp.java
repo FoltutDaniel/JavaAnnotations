@@ -13,7 +13,7 @@ public class JavaConfigDemoApp {
     	Coach coach3 = context.getBean("trackCoach",Coach.class); //field injection
     	Coach coach4 = context.getBean("sadCoach",Coach.class); //field injection with qualifier
     	Coach coach5 = context.getBean("coolCoach",Coach.class);//properties file with java annotations
-    	
+    	Coach coach6 = context.getBean("swimCoach",Coach.class); //Bean definition with dependency injection
     	System.out.println(coach1.getDailyWorkout());
     	System.out.println(coach1.getDailyFortune());
     	System.out.println(coach2.getDailyWorkout());
@@ -23,6 +23,9 @@ public class JavaConfigDemoApp {
     	System.out.println(coach4.getDailyWorkout());
     	System.out.println(coach4.getDailyFortune());
     	System.out.println(coach5.toString());
+    	System.out.println(coach6.getDailyWorkout());
+    	System.out.println(coach6.getDailyFortune());
+    	System.out.println(coach6.toString());
     	//close context
     	//close context
     	context.close();
